@@ -188,18 +188,18 @@ curl -X POST 'http://localhost:3000/api/register' \
   }'
 
 
-#Get all users#
+#GET all users#
 curl -X GET http://localhost:3000/api/users \
 -H "Authorization: Bearer your_generated_jwt_token"
 
 Remember of adding to another CRUD operations:
 -H "Authorization: Bearer your_generated_jwt_token"
 
-#Get user#
+#GET user#
 curl -X GET 'http://localhost:3000/api/users/{user_id}' \
   -H 'Authorization: Bearer your_generated_jwt_token'
 
-#Update user#
+#UPDATE user#
 curl -X PUT 'http://localhost:3000/api/users/{user_id}' \
   -H 'Authorization: Bearer your_generated_jwt_token' \
   -H 'Content-Type: application/json' \
@@ -210,12 +210,10 @@ curl -X PUT 'http://localhost:3000/api/users/{user_id}' \
     "role": "admin"
   }'
 
-#Delete user#
+#DELETE user#
 curl -X DELETE 'http://localhost:3000/api/users/{user_id}' \
   -H 'Authorization: Bearer your_generated_jwt_token'
 ```
-
-### Another CRUD Operations
 
 ## Running the Application
 
