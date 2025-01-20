@@ -145,21 +145,6 @@ This project is a simple user management API built with Express.js. It allows fo
 
 After registering or logging in, the user will receive a JWT token. This token should be included in the `Authorization` header of subsequent requests to protected routes.
 
-For example:
-
-
-
-```bash
-curl -X GET http://localhost:3000/api/protected-endpoint \
--H "Authorization: Bearer your_generated_jwt_token"
-```
-
-Remember of adding to another CRUD operations:
-
-```bash
--H "Authorization: Bearer your_generated_jwt_token"
-```
-
 
 ## Testing with CURL
 
@@ -186,11 +171,49 @@ curl -X POST http://localhost:3000/api/auth/login \
   "email": "john.doe@example.com",
   "password": "password123"
 }'
+
+#POST create user#
+curl -X POST 'http://localhost:3000/api/register' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "john.doe@example.com",
+    "password": "your_password",
+    "role": "user"
+  }'
+
+
+#Get all users#
+curl -X GET http://localhost:3000/api/users \
+-H "Authorization: Bearer your_generated_jwt_token"
+
+Remember of adding to another CRUD operations:
+-H "Authorization: Bearer your_generated_jwt_token"
+
+#Get user#
+curl -X GET 'http://localhost:3000/api/users/{user_id}' \
+  -H 'Authorization: Bearer your_generated_jwt_token'
+
+#Update user#
+curl -X PUT 'http://localhost:3000/api/users/{user_id}' \
+  -H 'Authorization: Bearer your_generated_jwt_token' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "firstName": "Jane",
+    "lastName": "Doe",
+    "email": "jane.doe@example.com",
+    "role": "admin"
+  }'
+
+#Delete user#
+curl -X DELETE 'http://localhost:3000/api/users/{user_id}' \
+  -H 'Authorization: Bearer your_generated_jwt_token'
+
+
 ```
 
 ### Another CRUD Operations
-
-http://localhost:3000/api-docs
 
 ## Running the Application
 
@@ -202,7 +225,10 @@ npm run dev
 
 The server will start on `http://localhost:3000`.
 
-## API Documentation
 
-The API is documented using Swagger. You can access the Swagger UI by visiting `http://localhost:3000/api-docs` after starting the server.
+### Future Work 
+
+today - introduction of swagger ui but not working
+in the future - configuring swagger ui correctly so that it is easy to use 
+
 
