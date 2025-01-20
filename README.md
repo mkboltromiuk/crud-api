@@ -171,7 +171,11 @@ curl -X POST http://localhost:3000/api/auth/login \
   "email": "john.doe@example.com",
   "password": "password123"
 }'
+```
 
+### CRUD Operations 
+
+```bash
 #POST create user#
 curl -X POST 'http://localhost:3000/api/register' \
   -H 'Content-Type: application/json' \
@@ -209,8 +213,6 @@ curl -X PUT 'http://localhost:3000/api/users/{user_id}' \
 #Delete user#
 curl -X DELETE 'http://localhost:3000/api/users/{user_id}' \
   -H 'Authorization: Bearer your_generated_jwt_token'
-
-
 ```
 
 ### Another CRUD Operations
