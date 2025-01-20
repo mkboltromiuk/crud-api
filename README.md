@@ -32,7 +32,7 @@ This project is a simple user management API built with Express.js. It allows fo
 2. Navigate to the project directory:
 
     ```bash
-    cd express-user-api
+    cd crud-api
     ```
 
 3. Install the dependencies:
