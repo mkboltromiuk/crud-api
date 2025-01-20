@@ -47,6 +47,10 @@ This project is a simple user management API built with Express.js. It allows fo
     
     npm install --save-dev nodemon
 
+    npm install jsonwebtoken bcryptjs
+
+    npm install swagger-ui-express swagger-jsdoc
+
 
     ```
 
