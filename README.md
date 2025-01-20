@@ -144,10 +144,19 @@ After registering or logging in, the user will receive a JWT token. This token s
 
 For example:
 
+
+
 ```bash
 curl -X GET http://localhost:3000/api/protected-endpoint \
 -H "Authorization: Bearer your_generated_jwt_token"
 ```
+
+Remember of adding to another CRUD operations:
+
+```bash
+-H "Authorization: Bearer your_generated_jwt_token"
+```
+
 
 ## Testing with CURL
 
