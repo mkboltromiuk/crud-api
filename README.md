@@ -18,7 +18,7 @@ This project is a simple user management API built with Express.js. It allows fo
 -   **Bcrypt.js**: Library for hashing passwords.
 -   **JWT (JSON Web Tokens)**: For securing API endpoints.
 -   **SQLite**: Lightweight database used for development and testing.
--   **Swagger**: API documentation.
+-   **Swagger**: API documentation. - Work in progress. 
 
 ## Installation
 
