@@ -9,7 +9,7 @@ This project is a simple user management API built with Express.js. It allows fo
 
 -   **User Registration**: Allows new users to register by providing their first name, last name, email, password, and role.
 -   **User Login**: Allows registered users to log in by providing their email and password.
--   **JWT Authentication**: Generates a JWT token for authenticated users which expires after 1 hour.
+-   **JWT Authentication**: Generates a JWT token for authenticated users.
 -   **User Role**: Supports two user roles: `user` and `admin`.
 
 ## Technologies Used
@@ -26,7 +26,7 @@ This project is a simple user management API built with Express.js. It allows fo
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/yourusername/express-user-api.git
+    git clone https://github.com/mkboltromiuk/crud-api.git
     ```
 ````
 
@@ -39,7 +39,16 @@ This project is a simple user management API built with Express.js. It allows fo
 3. Install the dependencies:
 
     ```bash
+
+    npm init -y
+    
     npm install
+
+    npm install express sequelize sqlite3 dotenv
+    
+    npm install --save-dev nodemon
+
+
     ```
 
 4. Create a `.env` file in the root directory and add the following environment variables:
@@ -47,21 +56,12 @@ This project is a simple user management API built with Express.js. It allows fo
     ```env
     JWT_SECRET=your_jwt_secret_key
     DB_NAME=your_database_name.db
+    PORT=3000
     ```
 
     This will set up the database connection to SQLite. By default, Sequelize will create the database file (`your_database_name.db`) in the project directory.
 
-5. Run migrations to set up the database schema:
 
-    ```bash
-    sequelize db:migrate
-    ```
-
-6. **(Optional)** To seed the database with initial data, you can run the following command:
-
-    ```bash
-    sequelize db:seed:all
-    ```
 
 ## API Endpoints
 
@@ -176,6 +176,10 @@ curl -X POST http://localhost:3000/api/auth/login \
 }'
 ```
 
+### Another CRUD Operations
+
+http://localhost:3000/api-docs
+
 ## Running the Application
 
 To start the application in development mode:
@@ -190,23 +194,3 @@ The server will start on `http://localhost:3000`.
 
 The API is documented using Swagger. You can access the Swagger UI by visiting `http://localhost:3000/api-docs` after starting the server.
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-```
-
-### Zmiany i uwagi:
-
-1. **SQLite jako baza danych**: Teraz README uwzględnia konfigurację SQLite jako bazy danych, zamiast PostgreSQL. Zostały dodane odpowiednie instrukcje dotyczące konfiguracji pliku `.env` i uruchamiania migracji z użyciem Sequelize.
-
-2. **Instalacja i konfiguracja**: Zaktualizowano sekcję instalacji, aby uwzględnić SQLite i odpowiednie zmienne środowiskowe.
-
-3. **Migrations i Seedowanie**: Sekcja zawiera instrukcje dotyczące migracji bazy danych i opcjonalnego seedowania bazy danych, co jest przydatne, jeśli chcesz wstępnie zapełnić bazę danymi.
-
-4. **CURL**: Przykłady testowania API z użyciem CURL pozostały niezmienione i działają niezależnie od bazy danych.
-
-### Podsumowanie:
-
-Wersja pliku `README.md` jest teraz bardziej dostosowana do używania SQLite jako bazy danych, a cała dokumentacja została zaktualizowana, by odzwierciedlała tę zmianę. Jeśli będziesz używał tej bazy danych, cała konfiguracja jest teraz gotowa do uruchomienia z SQLite.
-```
