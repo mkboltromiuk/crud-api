@@ -1,4 +1,3 @@
-Oczywiście! Oto zaktualizowany plik `README.md`, uwzględniający, że projekt działa z SQLite jako bazą danych:
 
 ````markdown
 # Express User Management API
