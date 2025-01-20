@@ -15,7 +15,7 @@ const options = {
             },
         ],
     },
-    apis: ['./src/routes/*.js'], // ścieżki do plików z komentarzami JSDoc
+    apis: ['./src/routes/*.js'], 
 };
 
 const specs = swaggerJsdoc(options);
